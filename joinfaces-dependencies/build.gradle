@@ -19,6 +19,9 @@ dependencies {
         api "com.github.adminfaces:admin-template:2.0"
         api "com.github.adminfaces:admin-theme:1.6.0"
 
+        //Bootsfaces
+        api 'net.bootsfaces:bootsfaces:2.0.1'
+
         //Primefaces
         api 'org.primefaces:primefaces:14.0.7'
         api "org.primefaces.extensions:primefaces-extensions:14.0.7.1"

@@ -15,6 +15,7 @@ It autoconfigures
 [Apache MyFaces Tobago](https://github.com/apache/myfaces-tobago), 
 [OmniFaces](http://omnifaces.org/),
 [AdminFaces](https://adminfaces.github.io/site/), 
+[BootsFaces](https://www.bootsfaces.net/), 
 [Mojarra](https://javaserverfaces.java.net/) and 
 [MyFaces](http://myfaces.apache.org/) libraries to run at embedded 
 [Tomcat](http://tomcat.apache.org/), 

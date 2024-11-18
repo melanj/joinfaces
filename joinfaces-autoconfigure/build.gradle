@@ -41,6 +41,7 @@ dependencies {
     optional "org.apache.myfaces.core:myfaces-impl:$myfaces4Version"
     optional 'org.omnifaces:omnifaces'
     optional 'org.primefaces:primefaces::jakarta'
+    optional 'net.bootsfaces:bootsfaces'
     optional 'org.glassfish.jaxb:jaxb-runtime'
 
     optional 'com.github.adminfaces:admin-template'
