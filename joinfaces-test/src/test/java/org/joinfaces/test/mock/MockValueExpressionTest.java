@@ -40,12 +40,14 @@ public class MockValueExpressionTest {
 
 	@Test
 	public void testGetValue_null() {
-		assertThat(this.mockValueExpression.getValue(null)).isEqualTo(FOO);
+		String value = this.mockValueExpression.getValue(null);
+		assertThat(value).isEqualTo(FOO);
 	}
 
 	@Test
 	public void testGetValue_mock() {
-		assertThat(this.mockValueExpression.getValue(mock(ELContext.class))).isEqualTo(FOO);
+		String value = this.mockValueExpression.getValue(mock(ELContext.class));
+		assertThat(value).isEqualTo(FOO);
 	}
 
 	@Test

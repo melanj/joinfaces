@@ -38,8 +38,8 @@ public class MockValueExpression extends ValueExpression {
 	private String value;
 
 	@Override
-	public Object getValue(ELContext elc) {
-		return this.value;
+	public <T> T getValue(ELContext elc) {
+		return (T) this.value;
 	}
 
 	@Override
