@@ -83,6 +83,8 @@ public class Primefaces4_0Properties implements ServletContextInitParameterPrope
 	/**
 	 * Defines uploader mode; auto, native or commons.
 	 */
+	@SuppressWarnings("removal")
+	@Deprecated(since = "PrimeFaces 14", forRemoval = true)
 	@ServletContextInitParameter(Constants.ContextParams.UPLOADER)
 	private String uploader;
 
