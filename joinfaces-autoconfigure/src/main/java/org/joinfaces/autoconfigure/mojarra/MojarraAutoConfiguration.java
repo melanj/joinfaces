@@ -60,9 +60,9 @@ public class MojarraAutoConfiguration implements FacesImplementationAutoConfigur
 
 	/**
 	 * {@link TldListenerRegistrationBean} for the 'jsf_core.tld' of Mojarra 3.
+	 * Not needed for Mojarra 4+.
 	 *
 	 * @return The {@link TldListenerRegistrationBean}.
-	 * @deprecated Not needed for Mojarra 4+.
 	 */
 	@Bean
 	@ConditionalOnResource(resources = "classpath:/META-INF/jsf_core.tld")

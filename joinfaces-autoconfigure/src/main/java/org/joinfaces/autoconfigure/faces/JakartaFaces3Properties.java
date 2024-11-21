@@ -99,6 +99,7 @@ public class JakartaFaces3Properties implements ServletContextInitParameterPrope
 	 *
 	 * @see ViewHandler#DEFAULT_SUFFIX_PARAM_NAME
 	 */
+	@SuppressWarnings("removal")
 	@Deprecated(forRemoval = true, since = "5.0.0")
 	@ServletContextInitParameter(value = ViewHandler.DEFAULT_SUFFIX_PARAM_NAME, listSeparator = " ")
 	private String defaultSuffix;

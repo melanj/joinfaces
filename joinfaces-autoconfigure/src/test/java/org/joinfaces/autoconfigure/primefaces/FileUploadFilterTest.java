@@ -25,10 +25,12 @@ import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Deprecated(forRemoval = true, since = "PrimeFaces 14")
 public class FileUploadFilterTest {
 
 	private WebApplicationContextRunner webApplicationContextRunner;
 
+	@SuppressWarnings("removal")
 	@BeforeEach
 	public void setUp() {
 		this.webApplicationContextRunner = new WebApplicationContextRunner()

@@ -42,6 +42,8 @@ import org.springframework.context.annotation.Configuration;
  * @author Nurettin Yilmaz
  * @author Lars Grefer
  */
+@SuppressWarnings("removal")
+@Deprecated(forRemoval = true, since = "Primefaces 14")
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass(FileUploadFilter.class)
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
