@@ -4,7 +4,7 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/milestone' }
+    maven { url = 'https://repo.spring.io/milestone' }
 }
 
 def springBootVersion = "3.3.7"
