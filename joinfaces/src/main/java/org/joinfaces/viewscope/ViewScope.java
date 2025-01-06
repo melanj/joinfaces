@@ -16,6 +16,7 @@
 
 package org.joinfaces.viewscope;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -150,7 +151,7 @@ public class ViewScope implements Scope {
 	 * @see org.springframework.web.context.request.DestructionCallbackBindingListener
 	 */
 	@Getter
-	static class SessionListener implements HttpSessionBindingListener {
+	static class SessionListener implements HttpSessionBindingListener, Serializable {
 
 		private final List<DestructionCallbackWrapper> destructionCallbackWrappers = new ArrayList<>();
 
@@ -186,7 +187,7 @@ public class ViewScope implements Scope {
 	 * @author Lars Grefer
 	 * @see #registerDestructionCallback(String, Runnable)
 	 */
-	class PreDestroyViewMapListener implements ViewMapListener {
+	class PreDestroyViewMapListener implements ViewMapListener, Serializable {
 
 		@Override
 		public void processEvent(SystemEvent event) {
@@ -211,7 +212,7 @@ public class ViewScope implements Scope {
 	 * @author Lars Grefer
 	 * @see #registerDestructionCallback(String, Runnable)
 	 */
-	static class DestructionCallbackWrapper {
+	static class DestructionCallbackWrapper implements Serializable {
 
 		@Getter
 		private final String beanName;
