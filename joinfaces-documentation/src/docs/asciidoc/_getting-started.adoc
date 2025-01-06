@@ -3,7 +3,7 @@
 JoinFaces enables JSF usage inside _Spring Boot_ Applications.
 
 NOTE: If you're not familiar with _Spring Boot_, you should read its
-https://docs.spring.io/spring-boot/docs/{spring-boot-version}/reference/html/getting-started.html#getting-started[Getting Started guide] first.
+https://docs.spring.io/spring-boot/{spring-boot-version}/tutorial/first-application/index.html[Getting Started guide] first.
 
 .Official example projects
 |===
@@ -22,7 +22,7 @@ https://docs.spring.io/spring-boot/docs/{spring-boot-version}/reference/html/get
 === System Requirements
 
 Unless otherwise noted, JoinFaces has the same system requirements as
-https://docs.spring.io/spring-boot/docs/{spring-boot-version}/reference/html/getting-started.html#getting-started.system-requirements[_Spring Boot {spring-boot-version}_].
+https://docs.spring.io/spring-boot/{spring-boot-version}/system-requirements.html[_Spring Boot {spring-boot-version}_].
 
 Make sure to use JoinFaces only on the classpath and not on the modulepath.
 
@@ -33,7 +33,7 @@ Each release of JoinFaces provides curated lists of dependencies that it support
 
 - `joinfaces-bom` contains dependency management information for all JoinFaces modules.
 - `joinfaces-dependencies` contains dependency management for external dependencies like Primefaces.
-- `joinfaces-platform` combines the first two together with https://docs.spring.io/spring-boot/docs/{spring-boot-version}/reference/html/using.html#using.build-systems.dependency-management[Spring Boot's dependency management]
+- `joinfaces-platform` combines the first two together with https://docs.spring.io/spring-boot/{spring-boot-version}/reference/using/build-systems.html#using.build-systems.dependency-management[Spring Boot's dependency management]
 
 
 The `joinfaces-platform` BOM also imports the `spring-boot-dependencies` BOM.
@@ -73,7 +73,7 @@ The complete list of managed versions can befound in the appendix <<versions>>.
 
 === Maven
 
-NOTE: Please also consult the official Spring Boot documentation: https://docs.spring.io/spring-boot/docs/{spring-boot-version}/reference/html/using.html#using.build-systems.maven[Link]
+NOTE: Please also consult the official Spring Boot documentation: https://docs.spring.io/spring-boot/{spring-boot-version}/reference/using/build-systems.html#using.build-systems.maven[Link]
 
 [source,xml,subs=attributes+]
 ----
@@ -115,7 +115,7 @@ NOTE: Please also consult the official Spring Boot documentation: https://docs.s
 
 === Gradle
 
-NOTE: Please also consult the official Spring Boot documentation: https://docs.spring.io/spring-boot/docs/{spring-boot-version}/reference/html/using.html#using.build-systems.gradle[Link]
+NOTE: Please also consult the official Spring Boot documentation: https://docs.spring.io/spring-boot/{spring-boot-version}/reference/using/build-systems.html#using.build-systems.gradle[Link]
 
 [source,groovy,subs=attributes+]
 ----
