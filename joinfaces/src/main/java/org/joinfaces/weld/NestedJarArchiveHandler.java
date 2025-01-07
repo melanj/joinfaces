@@ -39,8 +39,18 @@ public class NestedJarArchiveHandler extends FileSystemBeanArchiveHandler {
 
 	private static final Pattern nestedJarUrlPattern = Pattern.compile("jar:nested:(.+)/!(.+)!/(.+)");
 
+	// https://github.com/joinfaces/joinfaces/issues/2673
+	private static final String SB_32_NESTED_JAR_PREFIX = "jar:nested:";
+	private static final String WRONG_SUFFIX = "/!BOOT-INF/classes/!/META-INF/beans.xml";
+	private static final String CORRECT_SUFFIX = "!/BOOT-INF/classes";
+
 	@Override
 	public BeanArchiveBuilder handle(String beanArchiveReference) {
+
+		// https://github.com/joinfaces/joinfaces/issues/2673
+		if (beanArchiveReference.startsWith(SB_32_NESTED_JAR_PREFIX) && beanArchiveReference.endsWith(WRONG_SUFFIX)) {
+			beanArchiveReference = beanArchiveReference.substring(SB_32_NESTED_JAR_PREFIX.length(), beanArchiveReference.length() - WRONG_SUFFIX.length()) + CORRECT_SUFFIX;
+		}
 
 		Matcher nestedJarUrlMatcher = nestedJarUrlPattern.matcher(beanArchiveReference);
 		if (nestedJarUrlMatcher.matches()) {
