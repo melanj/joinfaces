@@ -85,6 +85,7 @@ configurations {
 tasks.register("mojarraIntegTest", Test) {
     include "**/*IT.class"
     exclude "**/myfaces/**.class"
+    testClassesDirs = testing.suites.test.sources.output.classesDirs
     classpath = configurations.mojarraIntegTestRuntime + sourceSets.main.output + sourceSets.test.output
     shouldRunAfter test
 }
@@ -92,6 +93,7 @@ tasks.register("mojarraIntegTest", Test) {
 tasks.register("myfacesIntegTest", Test) {
     include "**/*IT.class"
     exclude "**/mojarra/**.class"
+    testClassesDirs = testing.suites.test.sources.output.classesDirs
     classpath = configurations.myfacesIntegTestRuntime + sourceSets.main.output + sourceSets.test.output
     shouldRunAfter test
 }

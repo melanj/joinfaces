@@ -10,5 +10,7 @@ subprojects {
 
     dependencies {
         api platform(project(':joinfaces-platform'))
+
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     }
 }
