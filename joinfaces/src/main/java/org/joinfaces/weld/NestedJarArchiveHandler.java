@@ -40,23 +40,22 @@ public class NestedJarArchiveHandler extends FileSystemBeanArchiveHandler {
 	private static final Pattern nestedJarUrlPattern = Pattern.compile("jar:nested:(.+)/!(.+)!/(.+)");
 
 	// https://github.com/joinfaces/joinfaces/issues/2673
-	private static final String SB_32_NESTED_JAR_PREFIX = "jar:nested:";
-	private static final String WRONG_SUFFIX = "/!BOOT-INF/classes/!/META-INF/beans.xml";
-	private static final String CORRECT_SUFFIX = "!/BOOT-INF/classes";
+	private static final String BOOT_INF_BEANS_XML = "/!BOOT-INF/classes/!/META-INF/beans.xml";
+	private static final String BOOT_INF_INNER_JAR_WITHOUT_TRAILING_SLASH = "BOOT-INF/classes";
 
 	@Override
 	public BeanArchiveBuilder handle(String beanArchiveReference) {
-
-		// https://github.com/joinfaces/joinfaces/issues/2673
-		if (beanArchiveReference.startsWith(SB_32_NESTED_JAR_PREFIX) && beanArchiveReference.endsWith(WRONG_SUFFIX)) {
-			beanArchiveReference = beanArchiveReference.substring(SB_32_NESTED_JAR_PREFIX.length(), beanArchiveReference.length() - WRONG_SUFFIX.length()) + CORRECT_SUFFIX;
-		}
 
 		Matcher nestedJarUrlMatcher = nestedJarUrlPattern.matcher(beanArchiveReference);
 		if (nestedJarUrlMatcher.matches()) {
 
 			String outerJar = nestedJarUrlMatcher.group(1);
 			String innerJar = nestedJarUrlMatcher.group(2);
+
+			// https://github.com/joinfaces/joinfaces/issues/2673
+			if (beanArchiveReference.endsWith(BOOT_INF_BEANS_XML)) {
+				innerJar = BOOT_INF_INNER_JAR_WITHOUT_TRAILING_SLASH;
+			}
 
 			File file = new File(outerJar);
 			String path = outerJar + URLUtils.JAR_URL_SEPARATOR + innerJar;
