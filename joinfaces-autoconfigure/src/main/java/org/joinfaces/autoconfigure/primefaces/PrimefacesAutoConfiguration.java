@@ -71,14 +71,6 @@ public class PrimefacesAutoConfiguration {
 	}
 
 	/**
-	 * Auto Configuration for Primefaces 5.1.
-	 */
-	@Configuration(proxyBeanMethods = false)
-	@EnableConfigurationProperties(Primefaces5_1Properties.class)
-	public static class Primefaces5_1AutoConfiguration {
-	}
-
-	/**
 	 * Auto Configuration for Primefaces 5.2+.
 	 */
 	@Configuration(proxyBeanMethods = false)

@@ -81,14 +81,6 @@ public class Primefaces4_0Properties implements ServletContextInitParameterPrope
 	private Boolean clientSideValidation;
 
 	/**
-	 * Defines uploader mode; auto, native or commons.
-	 */
-	@SuppressWarnings("removal")
-	@Deprecated(since = "PrimeFaces 14", forRemoval = true)
-	@ServletContextInitParameter(Constants.ContextParams.UPLOADER)
-	private String uploader;
-
-	/**
 	 * Private reCaptcha key.
 	 */
 	@ServletContextInitParameter(Captcha.PRIVATE_KEY)
