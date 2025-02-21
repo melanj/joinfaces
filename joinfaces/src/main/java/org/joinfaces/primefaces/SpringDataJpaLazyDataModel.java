@@ -97,7 +97,7 @@ public class SpringDataJpaLazyDataModel<T, ID, R extends JpaRepository<T, ID> & 
 
 		return filterBy.values().stream()
 			.map(this::getSpecification)
-			.reduce((a, b) -> Specification.where(a).and(b))
+			.reduce(Specification::and)
 			.orElse(null);
 	}
 
