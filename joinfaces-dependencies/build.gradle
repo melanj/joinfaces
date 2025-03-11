@@ -36,7 +36,7 @@ dependencies {
 
         //MyFaces Tobago
         api 'org.apache.myfaces.tobago:tobago-core:6.7.1'
-        api 'org.apache.myfaces.tobago:tobago-theme-standard:6.7.0'
+        api 'org.apache.myfaces.tobago:tobago-theme-standard:6.7.1'
         api 'org.apache.myfaces.tobago:tobago-theme-speyside:6.7.1'
         api 'org.apache.myfaces.tobago:tobago-theme-scarborough:6.7.0'
         api 'org.apache.myfaces.tobago:tobago-theme-roxborough:6.7.1'
