@@ -2,10 +2,14 @@ description = 'AdminFaces Spring Boot Starter'
 jar.manifest.attributes('Automatic-Module-Name': 'joinfaces.starter.adminfaces')
 
 dependencies {
-    api project(':joinfaces-starters:primefaces-spring-boot-starter')
     api project(':joinfaces-starters:omnifaces-spring-boot-starter')
     api('com.github.adminfaces:admin-template') {
         exclude group: "org.omnifaces", module: 'omnifaces'
+    }
+    api('org.primefaces:primefaces::jakarta') {
+        version {
+            strictly '[12, 15['
+        }
     }
     api 'jakarta.persistence:jakarta.persistence-api'
     api 'jakarta.enterprise:jakarta.enterprise.cdi-api'
