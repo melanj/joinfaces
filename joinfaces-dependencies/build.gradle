@@ -38,7 +38,7 @@ dependencies {
         api 'org.apache.myfaces.tobago:tobago-theme-roxborough:6.7.2'
         api 'org.apache.myfaces.tobago:tobago-theme-charlotteville:6.7.2'
 
-        api 'org.omnifaces:omnifaces:4.6.2'
+        api 'org.omnifaces:omnifaces:4.6.3'
 
         //Ocpsoft Rewrite
         api 'org.ocpsoft.rewrite:rewrite-servlet:10.0.2.Final'
