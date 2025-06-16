@@ -39,7 +39,7 @@ dependencies {
         api 'org.apache.myfaces.tobago:tobago-theme-standard:6.7.2'
         api 'org.apache.myfaces.tobago:tobago-theme-speyside:6.7.2'
         api 'org.apache.myfaces.tobago:tobago-theme-scarborough:6.8.0'
-        api 'org.apache.myfaces.tobago:tobago-theme-roxborough:6.7.2'
+        api 'org.apache.myfaces.tobago:tobago-theme-roxborough:6.8.0'
         api 'org.apache.myfaces.tobago:tobago-theme-charlotteville:6.7.2'
 
         api 'org.omnifaces:omnifaces:4.6.5'
