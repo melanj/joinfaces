@@ -5,7 +5,7 @@ plugins {
     id "io.freefair.maven-central.validate-poms" apply false
     id "com.github.spotbugs" version "6.1.13" apply false
     //id "de.aaschmid.cpd" version "3.4"
-    id "io.github.gradle-nexus.publish-plugin" version "2.0.0"
+    id 'org.jreleaser' version '1.19.0'
 }
 
 allprojects {
@@ -142,6 +142,13 @@ allprojects {
                     }
                 }
             }
+
+            repositories {
+                maven {
+                    name = "stagingDeploy"
+                    url = rootProject.layout.buildDirectory.dir('staging-deploy')
+                }
+            }
         }
     }
 }
@@ -156,10 +163,26 @@ allprojects {
 
 apply plugin: "maven-publish"
 
-nexusPublishing {
-    repositories {
-        sonatype {
-            stagingProfileId = '9d2198adfd84d'
+jreleaser {
+    project {
+        name = "JoinFaces"
+        inceptionYear = "2016"
+        license = 'Apache-2.0'
+    }
+    signing {
+        active = 'NEVER'
+    }
+    deploy {
+        maven {
+            mavenCentral {
+                sonatype {
+                    active = 'ALWAYS'
+                    url = 'https://central.sonatype.com/api/v1/publisher'
+                    stagingRepository('build/staging-deploy')
+                    sign = false //Done by Gradle
+                    checksums = false //Done by Gradle
+                }
+            }
         }
     }
 }
