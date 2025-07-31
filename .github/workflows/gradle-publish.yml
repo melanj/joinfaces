@@ -33,5 +33,6 @@ jobs:
         env:
           JRELEASER_MAVENCENTRAL_USERNAME: ${{ secrets.MAVENCENTRAL_USERNAME }}
           JRELEASER_MAVENCENTRAL_PASSWORD: ${{ secrets.MAVENCENTRAL_PASSWORD }}
+          JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORG_GRADLE_PROJECT_joinfacesDocsUser: ${{ secrets.JOINFACES_DOCS_USER }}
           ORG_GRADLE_PROJECT_joinfacesDocsPass: ${{ secrets.JOINFACES_DOCS_PASS }}
