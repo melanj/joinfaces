@@ -27,6 +27,9 @@ dependencies {
     compileOnly 'jakarta.platform:jakarta.jakartaee-web-api:10.0.0'
 
     optional 'org.springframework.boot:spring-boot-starter'
+    optional 'org.springframework.boot:spring-boot-servlet'
+    optional 'org.springframework.boot:spring-boot-hibernate'
+    optional 'org.springframework.boot:spring-boot-session'
     optional 'org.springframework:spring-web'
     optional 'org.springframework.boot:spring-boot-starter-tomcat'
     optional 'org.springframework.boot:spring-boot-starter-jetty'

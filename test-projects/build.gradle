@@ -27,6 +27,7 @@ subprojects {
 
         implementation 'org.primefaces:primefaces::jakarta'
 
+        testImplementation('org.springframework.boot:spring-boot-starter-restclient')
         testImplementation('org.springframework.boot:spring-boot-starter-test') {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         }

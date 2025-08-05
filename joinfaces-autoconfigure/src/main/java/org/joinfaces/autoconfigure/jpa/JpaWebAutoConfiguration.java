@@ -23,10 +23,10 @@ import org.joinfaces.jpa.OrderedOpenEntityManagerInViewFilter;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingFilterBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.ConditionalOnMissingFilterBean;
+import org.springframework.boot.hibernate.autoconfigure.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor;
@@ -40,7 +40,7 @@ import org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor;
  * {@link OpenEntityManagerInViewFilter} instead.
  *
  * @author Lars Grefer
- * @see org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration
+ * @see org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration
  */
 @AutoConfiguration(before = HibernateJpaAutoConfiguration.class)
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)

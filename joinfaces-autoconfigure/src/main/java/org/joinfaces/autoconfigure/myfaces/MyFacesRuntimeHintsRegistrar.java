@@ -39,7 +39,7 @@ public class MyFacesRuntimeHintsRegistrar extends ClassGraphRuntimeHintsRegistra
 		hints.reflection().registerTypeIfPresent(classLoader, "org.apache.myfaces.webapp.MyFacesContainerInitializer", MemberCategory.INVOKE_PUBLIC_CONSTRUCTORS);
 		hints.reflection().registerTypeIfPresent(classLoader, "org.apache.myfaces.ee.MyFacesContainerInitializer", MemberCategory.INVOKE_PUBLIC_CONSTRUCTORS);
 
-		hints.reflection().registerTypeIfPresent(classLoader, "jakarta.faces.context._MyFacesExternalContextHelper", MemberCategory.DECLARED_FIELDS);
+		hints.reflection().registerTypeIfPresent(classLoader, "jakarta.faces.context._MyFacesExternalContextHelper", MemberCategory.ACCESS_DECLARED_FIELDS);
 
 		for (ClassInfo classInfo : scanResult.getAllClasses()) {
 			if (classInfo.getPackageName().equals("org.apache.myfaces.spi") && classInfo.isAbstract()) {

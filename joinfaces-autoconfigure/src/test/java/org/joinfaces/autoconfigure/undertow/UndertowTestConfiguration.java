@@ -18,7 +18,7 @@ package org.joinfaces.autoconfigure.undertow;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory;
+import org.springframework.boot.undertow.servlet.UndertowServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 
 /**

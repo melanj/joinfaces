@@ -23,12 +23,12 @@ import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import lombok.Singular;
 
-import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory;
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
-import org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory;
+import org.springframework.boot.jetty.servlet.JettyServletWebServerFactory;
+import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory;
+import org.springframework.boot.undertow.servlet.UndertowServletWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.AbstractServletWebServerFactory;
-import org.springframework.boot.web.servlet.server.Jsp;
+import org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory;
+import org.springframework.boot.web.server.servlet.Jsp;
 import org.springframework.util.ClassUtils;
 
 /**
@@ -45,29 +45,29 @@ import org.springframework.util.ClassUtils;
  */
 @Builder
 @RequiredArgsConstructor
-public class TldListenerRegistrationBean implements WebServerFactoryCustomizer<AbstractServletWebServerFactory> {
+public class TldListenerRegistrationBean implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
 	@Singular
 	private final Collection<Class<? extends EventListener>> listeners;
 
 	@Override
-	public void customize(AbstractServletWebServerFactory factory) {
+	public void customize(ConfigurableServletWebServerFactory factory) {
 		if (mustAddInitializer(factory)) {
 			ServletContextListenerUtil.addListeners(factory, listeners);
 		}
 	}
 
-	private boolean mustAddInitializer(AbstractServletWebServerFactory factory) {
-		if (factory instanceof JettyServletWebServerFactory) {
+	private boolean mustAddInitializer(ConfigurableServletWebServerFactory factory) {
+		if (SpringBootServerUtil.isSpringBootJettyAvailable() && factory instanceof JettyServletWebServerFactory) {
 			return true;
 		}
 
-		if (factory instanceof UndertowServletWebServerFactory) {
+		if (SpringBootServerUtil.isSpringBootUndertowAvailable() && factory instanceof UndertowServletWebServerFactory) {
 			return true;
 		}
 
-		if (factory instanceof TomcatServletWebServerFactory) {
-			Jsp jsp = factory.getJsp();
+		if (SpringBootServerUtil.isSpringBootTomcatAvailable() && factory instanceof TomcatServletWebServerFactory) {
+			Jsp jsp = factory.getSettings().getJsp();
 			return !jsp.getRegistered() || !ClassUtils.isPresent(jsp.getClassName(), null);
 		}
 

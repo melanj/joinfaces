@@ -19,7 +19,7 @@ package org.joinfaces.jpa;
 import lombok.Getter;
 import lombok.Setter;
 
-import org.springframework.boot.web.servlet.filter.OrderedFilter;
+import org.springframework.boot.servlet.filter.OrderedFilter;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 
 /**

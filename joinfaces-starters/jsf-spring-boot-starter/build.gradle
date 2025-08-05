@@ -7,6 +7,7 @@ dependencies {
     api project(':joinfaces-autoconfigure')
 
     api 'org.springframework.boot:spring-boot-starter'
+    api 'org.springframework.boot:spring-boot-servlet'
     api 'org.springframework:spring-web'
 
     api 'org.springframework.boot:spring-boot-starter-tomcat'

@@ -30,12 +30,12 @@ import org.eclipse.jetty.ee10.webapp.Configuration;
 import org.eclipse.jetty.ee10.webapp.WebAppContext;
 
 import org.springframework.beans.BeanUtils;
-import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory;
-import org.springframework.boot.web.embedded.tomcat.TomcatContextCustomizer;
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
-import org.springframework.boot.web.embedded.undertow.UndertowDeploymentInfoCustomizer;
-import org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.boot.jetty.servlet.JettyServletWebServerFactory;
+import org.springframework.boot.tomcat.TomcatContextCustomizer;
+import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory;
+import org.springframework.boot.undertow.servlet.UndertowDeploymentInfoCustomizer;
+import org.springframework.boot.undertow.servlet.UndertowServletWebServerFactory;
+import org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory;
 
 /**
  * Helper class for Servlet Context Listeners.
@@ -57,13 +57,13 @@ public class ServletContextListenerUtil {
 	 * @param listeners The listeners to add.
 	 */
 	public static void addListeners(ConfigurableServletWebServerFactory factory, Collection<Class<? extends EventListener>> listeners) {
-		if (factory instanceof TomcatServletWebServerFactory tomcatFactory) {
+		if (SpringBootServerUtil.isSpringBootTomcatAvailable() && factory instanceof TomcatServletWebServerFactory tomcatFactory) {
 			tomcatFactory.addContextCustomizers(new TomcatListenerAdder(listeners));
 		}
-		else if (factory instanceof JettyServletWebServerFactory jettyFactory) {
+		else if (SpringBootServerUtil.isSpringBootJettyAvailable() && factory instanceof JettyServletWebServerFactory jettyFactory) {
 			jettyFactory.addConfigurations(new JettyListenerAdder(listeners));
 		}
-		else if (factory instanceof UndertowServletWebServerFactory undertowFactory) {
+		else if (SpringBootServerUtil.isSpringBootUndertowAvailable() && factory instanceof UndertowServletWebServerFactory undertowFactory) {
 			undertowFactory.addDeploymentInfoCustomizers(new UndertowListenerAdder(listeners));
 		}
 		else {
@@ -85,7 +85,7 @@ public class ServletContextListenerUtil {
 		@Override
 		public void customize(Context context) {
 			this.listeners.forEach(listener ->
-					context.addApplicationListener(listener.getName())
+				context.addApplicationListener(listener.getName())
 			);
 		}
 	}

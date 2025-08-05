@@ -27,7 +27,6 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportRuntimeHints;
@@ -37,7 +36,7 @@ import org.springframework.context.annotation.ImportRuntimeHints;
  *
  * @author Marcelo Fernandes
  */
-@AutoConfiguration(before = WebMvcAutoConfiguration.class, after = JakartaFaces3AutoConfiguration.class)
+@AutoConfiguration(beforeName = "org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration", after = JakartaFaces3AutoConfiguration.class)
 @EnableConfigurationProperties({MyFacesProperties.class, MyFaces2_3Properties.class})
 @ConditionalOnClass(StartupServletContextListener.class)
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)

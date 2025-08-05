@@ -36,6 +36,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.apache.myfaces.core.api.shared.lang.Assert;
+import org.jspecify.annotations.NonNull;
 import org.primefaces.model.FilterMeta;
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.MatchMode;
@@ -89,16 +90,16 @@ public class SpringDataJpaLazyDataModel<T, ID, R extends JpaRepository<T, ID> & 
 		return (int) repository.count(specification);
 	}
 
-	@Nullable
+	@NonNull
 	protected Specification<T> getSpecification(Map<String, FilterMeta> filterBy) {
 		if (CollectionUtils.isEmpty(filterBy)) {
-			return null;
+			return Specification.unrestricted();
 		}
 
 		return filterBy.values().stream()
 			.map(this::getSpecification)
 			.reduce(Specification::and)
-			.orElse(null);
+			.orElse(Specification.unrestricted());
 	}
 
 	protected Specification<T> getSpecification(FilterMeta filterMeta) {

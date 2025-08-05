@@ -16,4 +16,5 @@ dependencies {
     runtimeOnly 'jakarta.ejb:jakarta.ejb-api'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-restclient'
 }

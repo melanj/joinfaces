@@ -17,11 +17,11 @@
 package org.joinfaces.autoconfigure;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingFilterBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
-import org.springframework.boot.autoconfigure.web.servlet.ConditionalOnMissingFilterBean;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
-import org.springframework.boot.web.servlet.filter.OrderedRequestContextFilter;
+import org.springframework.boot.servlet.filter.OrderedRequestContextFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportRuntimeHints;
 import org.springframework.web.context.request.RequestContextListener;
@@ -32,19 +32,20 @@ import org.springframework.web.filter.RequestContextFilter;
  *
  * @author Lars Grefer
  */
-@AutoConfiguration(after = WebMvcAutoConfiguration.class)
+@AutoConfiguration(afterName = "org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration")
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
+@ConditionalOnClass(OrderedRequestContextFilter.class)
 @ImportRuntimeHints(JoinfacesRuntimeHintsRegistrar.class)
 public class JoinfacesAutoConfiguration {
 
 	/**
-	 * This registers a {@link RequestContextFilter} in case {@link WebMvcAutoConfiguration} is not loaded.
+	 * This registers a {@link RequestContextFilter} in case {@link org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration} is not loaded.
 	 *
 	 * @return The {@link RequestContextFilter} Bean.
 	 * @see WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter()
 	 */
 	@Bean
-	@ConditionalOnMissingBean({ RequestContextListener.class, RequestContextFilter.class })
+	@ConditionalOnMissingBean({RequestContextListener.class, RequestContextFilter.class})
 	@ConditionalOnMissingFilterBean(RequestContextFilter.class)
 	public static RequestContextFilter requestContextFilter() {
 		return new OrderedRequestContextFilter();

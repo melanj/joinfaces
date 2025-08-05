@@ -26,9 +26,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
-import org.springframework.boot.web.server.ErrorPage;
+import org.springframework.boot.web.error.ErrorPage;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory;
 
 /**
  * {@link org.springframework.boot.web.servlet.RegistrationBean RegistrationBean} for {@code web-fragment.xml} files.

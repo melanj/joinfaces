@@ -75,14 +75,14 @@ class FaceletsAuthorizeTagUtilsIT extends JsfIT {
 	@Test
 	@WithMockUser(roles = {"A", "B"})
 	void testIsAllowed() throws IOException {
-		assertThat(FaceletsAuthorizeTagUtils.isAllowed("myurl", "mymethod"))
+		assertThat(FaceletsAuthorizeTagUtils.isAllowed("/myurl", "mymethod"))
 			.isTrue();
 	}
 
 	@Test
 	@WithAnonymousUser
 	void testIsAllowedFalse() throws IOException {
-		assertThat(FaceletsAuthorizeTagUtils.isAllowed("myurl", "mymethod"))
+		assertThat(FaceletsAuthorizeTagUtils.isAllowed("/myurl", "mymethod"))
 			.isFalse();
 	}
 

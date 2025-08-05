@@ -22,7 +22,7 @@ import org.jboss.weld.environment.servlet.EnhancedListener;
 import org.jboss.weld.environment.servlet.WeldServletLifecycle;
 import org.joinfaces.servlet.ServletContainerInitializerRegistrationBean;
 
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory;
 import org.springframework.util.StringUtils;
 
 /**
