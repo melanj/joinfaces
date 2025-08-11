@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2022 the original author or authors.
+ * Copyright 2016-2025 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package org.joinfaces.starter.primefaces;
 
 import org.junit.jupiter.api.Test;
+import org.primefaces.PrimeFaces;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,5 +34,18 @@ public class PrimefacesTest {
 	@Test
 	void contextLoads() {
 		assertThat(this.webApplicationContext).isNotNull();
+	}
+
+	/**
+	 * <a href="https://github.com/joinfaces/joinfaces/issues/2999">#2999</a>
+	 */
+	@Test
+	void noLtsVersion() {
+		String implementationVersion = PrimeFaces.class.getPackage().getImplementationVersion();
+
+		assertThat(implementationVersion).isNotNull();
+		assertThat(implementationVersion).contains(".");
+		assertThat(implementationVersion).doesNotContain("LTS");
+		assertThat(implementationVersion).doesNotContain("lts");
 	}
 }
