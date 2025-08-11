@@ -19,7 +19,7 @@
  *
  * @see org.joinfaces.autoconfigure.weld.WeldSpringBootAutoConfiguration
  */
-@NonNullApi
+@NullMarked
 package org.joinfaces.autoconfigure.weld;
 
-import org.springframework.lang.NonNullApi;
+import org.jspecify.annotations.NullMarked;

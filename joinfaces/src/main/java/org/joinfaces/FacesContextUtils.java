@@ -21,9 +21,9 @@ import jakarta.faces.context.FacesContext;
 import jakarta.servlet.ServletContext;
 
 import lombok.experimental.UtilityClass;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 

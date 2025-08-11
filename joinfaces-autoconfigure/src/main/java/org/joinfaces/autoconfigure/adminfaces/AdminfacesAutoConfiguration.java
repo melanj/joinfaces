@@ -27,6 +27,7 @@ import org.joinfaces.autoconfigure.primefaces.Primefaces4_0Properties;
 import org.joinfaces.autoconfigure.primefaces.Primefaces5_2Properties;
 import org.joinfaces.autoconfigure.primefaces.PrimefacesAutoConfiguration;
 import org.joinfaces.servlet.WebFragmentRegistrationBean;
+import org.jspecify.annotations.Nullable;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.http.HttpStatus;
-import org.springframework.lang.Nullable;
 
 /**
  * Spring Boot Auto Configuration of AdminFaces.

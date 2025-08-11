@@ -17,7 +17,7 @@
 /**
  * Spring Session specific configuration classes.
  */
-@NonNullApi
+@NullMarked
 package org.joinfaces.autoconfigure.session;
 
-import org.springframework.lang.NonNullApi;
+import org.jspecify.annotations.NullMarked;

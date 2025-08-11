@@ -19,7 +19,7 @@
  *
  * @author Lars Grefer
  */
-@NonNullApi
+@NullMarked
 package org.joinfaces.viewscope;
 
-import org.springframework.lang.NonNullApi;
+import org.jspecify.annotations.NullMarked;

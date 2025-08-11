@@ -18,10 +18,9 @@ package org.joinfaces.viewscope;
 
 import jakarta.faces.context.FacesContext;
 
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import org.springframework.lang.Nullable;
 
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.mockito.BDDMockito.mock;

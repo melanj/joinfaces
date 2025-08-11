@@ -24,10 +24,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.jspecify.annotations.NonNull;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.MessageSourceAccessor;
-import org.springframework.lang.NonNull;
 
 /**
  * This class wraps an {@link org.springframework.context.MessageSource MessageSource} and exposes it through the

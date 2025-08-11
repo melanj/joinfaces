@@ -32,6 +32,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.joinfaces.ClasspathScanUtil;
+import org.jspecify.annotations.Nullable;
 import org.ocpsoft.common.services.ServiceLoader;
 import org.ocpsoft.rewrite.annotation.ClassVisitorImpl;
 import org.ocpsoft.rewrite.annotation.config.AnnotationConfigProvider;
@@ -39,7 +40,6 @@ import org.ocpsoft.rewrite.annotation.spi.AnnotationHandler;
 import org.ocpsoft.rewrite.config.Configuration;
 import org.ocpsoft.rewrite.servlet.config.HttpConfigurationProvider;
 
-import org.springframework.lang.Nullable;
 import org.springframework.util.CollectionUtils;
 
 /**

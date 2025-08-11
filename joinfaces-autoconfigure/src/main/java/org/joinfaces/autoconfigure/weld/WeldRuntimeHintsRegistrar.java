@@ -25,12 +25,12 @@ import org.jboss.weld.bootstrap.api.helpers.RegistrySingletonProvider;
 import org.jboss.weld.environment.logging.WeldEnvironmentLogger;
 import org.jboss.weld.logging.WeldLogger;
 import org.joinfaces.aot.ClassGraphRuntimeHintsRegistrar;
+import org.jspecify.annotations.Nullable;
 
 import org.springframework.aot.hint.MemberCategory;
 import org.springframework.aot.hint.RuntimeHints;
 import org.springframework.aot.hint.RuntimeHintsRegistrar;
 import org.springframework.aot.hint.TypeReference;
-import org.springframework.lang.Nullable;
 
 /**
  * {@link RuntimeHintsRegistrar} for Weld.

@@ -16,10 +16,11 @@
 
 package org.joinfaces.autoconfigure;
 
+import org.jspecify.annotations.Nullable;
+
 import org.springframework.aot.hint.MemberCategory;
 import org.springframework.aot.hint.RuntimeHints;
 import org.springframework.aot.hint.RuntimeHintsRegistrar;
-import org.springframework.lang.Nullable;
 import org.springframework.web.jsf.el.SpringBeanFacesELResolver;
 
 /**

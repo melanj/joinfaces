@@ -17,7 +17,7 @@
 /**
  * Root Package of Auto Configuration classes.
  */
-@NonNullApi
+@NullMarked
 package org.joinfaces.autoconfigure;
 
-import org.springframework.lang.NonNullApi;
+import org.jspecify.annotations.NullMarked;

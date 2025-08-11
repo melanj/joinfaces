@@ -17,7 +17,7 @@
 /**
  * Spring AOT related classes.
  */
-@NonNullApi
+@NullMarked
 package org.joinfaces.aot;
 
-import org.springframework.lang.NonNullApi;
+import org.jspecify.annotations.NullMarked;
