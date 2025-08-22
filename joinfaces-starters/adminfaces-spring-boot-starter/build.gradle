@@ -9,6 +9,7 @@ dependencies {
     api('org.primefaces:primefaces::jakarta') {
         version {
             strictly '[12, 15['
+            prefer '14.0.12'
         }
     }
     api 'jakarta.persistence:jakarta.persistence-api'
