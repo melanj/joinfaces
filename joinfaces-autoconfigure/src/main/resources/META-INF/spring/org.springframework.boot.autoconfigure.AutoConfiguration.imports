@@ -19,7 +19,6 @@ org.joinfaces.autoconfigure.servlet.initparams.ServletContextInitParameterProper
 org.joinfaces.autoconfigure.session.SpringSessionFixAutoConfiguration
 org.joinfaces.autoconfigure.tobago.TobagoAutoConfiguration
 org.joinfaces.autoconfigure.tomcat.TomcatAutoConfiguration
-org.joinfaces.autoconfigure.undertow.UndertowAutoConfiguration
 org.joinfaces.autoconfigure.viewscope.ViewScopeAutoConfiguration
 org.joinfaces.autoconfigure.weld.WeldSpringBootAutoConfiguration
 org.joinfaces.autoconfigure.openwebbeans.OpenWebBeansAutoConfiguration

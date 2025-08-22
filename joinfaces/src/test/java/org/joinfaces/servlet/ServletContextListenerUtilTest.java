@@ -27,7 +27,6 @@ import org.junit.jupiter.api.Test;
 
 import org.springframework.boot.jetty.servlet.JettyServletWebServerFactory;
 import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory;
-import org.springframework.boot.undertow.servlet.UndertowServletWebServerFactory;
 import org.springframework.boot.web.server.WebServer;
 import org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory;
 
@@ -62,15 +61,6 @@ class ServletContextListenerUtilTest {
 				throw error;
 			}
 		}
-	}
-
-	@Test
-	void testUndertow() {
-		ConfigurableServletWebServerFactory factory = new UndertowServletWebServerFactory();
-
-		ServletContextListenerUtil.addListeners(factory, List.of(TestListener.class));
-
-		this.test(factory);
 	}
 
 	@SneakyThrows

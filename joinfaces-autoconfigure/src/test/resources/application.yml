@@ -2,7 +2,3 @@ joinfaces:
   # jetty namespace
   jetty:
     classPathResource: public
-
-  # undertow namespace
-  undertow:
-    classPathResource: public

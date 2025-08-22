@@ -25,7 +25,6 @@ dependencies {
 
     javadocClasspath "org.springframework.boot:spring-boot-starter-tomcat"
     javadocClasspath "org.springframework.boot:spring-boot-starter-jetty"
-    javadocClasspath "org.springframework.boot:spring-boot-starter-undertow"
 
     javadocClasspath project(":joinfaces-starters:adminfaces-spring-boot-starter")
     javadocClasspath project(":joinfaces-starters:omnifaces-spring-boot-starter")

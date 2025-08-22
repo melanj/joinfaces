@@ -25,7 +25,6 @@ import lombok.Singular;
 
 import org.springframework.boot.jetty.servlet.JettyServletWebServerFactory;
 import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory;
-import org.springframework.boot.undertow.servlet.UndertowServletWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory;
 import org.springframework.boot.web.server.servlet.Jsp;
@@ -34,9 +33,9 @@ import org.springframework.util.ClassUtils;
 /**
  * This class registers listeners to the servlet context, which would normally registered in a tld file.
  * <p>
- * Some JSF libraries declare listeners in JSP taglib files. Undertow and Jetty (since 9.4.14.v20181114)
- * don't find there listeners, so this class can be used as spring bean to manually add the listeners to an
- * embedded undertow or jetty.
+ * Some JSF libraries declare listeners in JSP taglib files. Jetty (since 9.4.14.v20181114)
+ * doesn't find there listeners, so this class can be used as spring bean to manually add the listeners to an
+ * embedded jetty.
  * <p>
  * Also the embedded Tomcat does not find the listeners, if tomcat-embed-jasper is not deployed.
  *
@@ -59,10 +58,6 @@ public class TldListenerRegistrationBean implements WebServerFactoryCustomizer<C
 
 	private boolean mustAddInitializer(ConfigurableServletWebServerFactory factory) {
 		if (SpringBootServerUtil.isSpringBootJettyAvailable() && factory instanceof JettyServletWebServerFactory) {
-			return true;
-		}
-
-		if (SpringBootServerUtil.isSpringBootUndertowAvailable() && factory instanceof UndertowServletWebServerFactory) {
 			return true;
 		}
 

@@ -37,7 +37,6 @@ dependencies {
 
     optional 'org.springframework.boot:spring-boot-starter-tomcat'
     optional 'org.springframework.boot:spring-boot-starter-jetty'
-    optional 'org.springframework.boot:spring-boot-starter-undertow'
 
     optional 'org.ocpsoft.rewrite:rewrite-servlet'
     optional 'org.ocpsoft.rewrite:rewrite-integration-spring'

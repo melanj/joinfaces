@@ -18,9 +18,8 @@ It autoconfigures
 [BootsFaces](https://www.bootsfaces.net/), 
 [Mojarra](https://javaserverfaces.java.net/) and 
 [MyFaces](http://myfaces.apache.org/) libraries to run at embedded 
-[Tomcat](http://tomcat.apache.org/), 
-[Jetty](http://www.eclipse.org/jetty) or 
-[Undertow](http://undertow.io) servlet containers.
+[Tomcat](http://tomcat.apache.org/) or
+[Jetty](http://www.eclipse.org/jetty) servlet containers.
 It autoconfigures [Weld](http://weld.cdi-spec.org),
 [Apache OpenWebBeans](https://openwebbeans.apache.org/), and
 [Rewrite](https://www.ocpsoft.org/rewrite/) too.

@@ -19,8 +19,6 @@ package org.joinfaces.servlet;
 import java.util.Collection;
 import java.util.EventListener;
 
-import io.undertow.servlet.api.DeploymentInfo;
-import io.undertow.servlet.api.ListenerInfo;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
@@ -33,8 +31,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.boot.jetty.servlet.JettyServletWebServerFactory;
 import org.springframework.boot.tomcat.TomcatContextCustomizer;
 import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory;
-import org.springframework.boot.undertow.servlet.UndertowDeploymentInfoCustomizer;
-import org.springframework.boot.undertow.servlet.UndertowServletWebServerFactory;
 import org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory;
 
 /**
@@ -62,9 +58,6 @@ public class ServletContextListenerUtil {
 		}
 		else if (SpringBootServerUtil.isSpringBootJettyAvailable() && factory instanceof JettyServletWebServerFactory jettyFactory) {
 			jettyFactory.addConfigurations(new JettyListenerAdder(listeners));
-		}
-		else if (SpringBootServerUtil.isSpringBootUndertowAvailable() && factory instanceof UndertowServletWebServerFactory undertowFactory) {
-			undertowFactory.addDeploymentInfoCustomizers(new UndertowListenerAdder(listeners));
 		}
 		else {
 			log.warn("Unkown WebServerFactory implementation: {}", factory.getClass());
@@ -109,22 +102,6 @@ public class ServletContextListenerUtil {
 			for (Class<? extends EventListener> listener : this.listeners) {
 				context.addEventListener(BeanUtils.instantiateClass(listener));
 			}
-		}
-	}
-
-	/**
-	 * This {@link UndertowDeploymentInfoCustomizer} adds listeners to the servlet-context in a non-programmatic way,
-	 * so they aren't affected by the restrictions for programmatically registered listeners of Section 4.4
-	 * of the Servlet Specification.
-	 */
-	@RequiredArgsConstructor
-	public static class UndertowListenerAdder implements UndertowDeploymentInfoCustomizer {
-
-		private final Collection<Class<? extends EventListener>> listeners;
-
-		@Override
-		public void customize(DeploymentInfo deploymentInfo) {
-			this.listeners.forEach(listener -> deploymentInfo.addListener(new ListenerInfo(listener, false)));
 		}
 	}
 }

@@ -30,8 +30,4 @@ public class SpringBootServerUtil {
 	public static boolean isSpringBootJettyAvailable() {
 		return ClassUtils.isPresent("org.springframework.boot.jetty.servlet.JettyServletWebServerFactory", null);
 	}
-
-	public static boolean isSpringBootUndertowAvailable() {
-		return ClassUtils.isPresent("org.springframework.boot.undertow.servlet.UndertowServletWebServerFactory", null);
-	}
 }

@@ -21,7 +21,6 @@ import org.junit.jupiter.api.Test;
 
 import org.springframework.boot.jetty.servlet.JettyServletWebServerFactory;
 import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory;
-import org.springframework.boot.undertow.servlet.UndertowServletWebServerFactory;
 
 
 class WeldServletContainerInitializerRegistrationBeanTest {
@@ -37,7 +36,6 @@ class WeldServletContainerInitializerRegistrationBeanTest {
 	void setContainerClass() {
 		this.bean.setContainerClass(new TomcatServletWebServerFactory());
 		this.bean.setContainerClass(new JettyServletWebServerFactory());
-		this.bean.setContainerClass(new UndertowServletWebServerFactory());
 	}
 
 }
