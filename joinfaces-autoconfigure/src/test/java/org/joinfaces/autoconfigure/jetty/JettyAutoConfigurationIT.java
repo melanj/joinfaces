@@ -18,7 +18,7 @@ package org.joinfaces.autoconfigure.jetty;
 
 import java.io.IOException;
 
-import org.eclipse.jetty.ee10.webapp.WebAppContext;
+import org.eclipse.jetty.ee11.webapp.WebAppContext;
 import org.eclipse.jetty.server.Server;
 import org.junit.jupiter.api.Test;
 

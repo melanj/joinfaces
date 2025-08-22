@@ -23,9 +23,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.Context;
-import org.eclipse.jetty.ee10.webapp.AbstractConfiguration;
-import org.eclipse.jetty.ee10.webapp.Configuration;
-import org.eclipse.jetty.ee10.webapp.WebAppContext;
+import org.eclipse.jetty.ee11.webapp.AbstractConfiguration;
+import org.eclipse.jetty.ee11.webapp.Configuration;
+import org.eclipse.jetty.ee11.webapp.WebAppContext;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.boot.jetty.servlet.JettyServletWebServerFactory;
