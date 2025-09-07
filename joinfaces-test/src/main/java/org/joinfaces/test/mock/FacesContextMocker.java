@@ -44,7 +44,7 @@ public abstract class FacesContextMocker extends FacesContext {
 		return context;
 	}
 
-	private static class Release implements Answer<Void> {
+	private static final class Release implements Answer<Void> {
 
 		@Override
 		public Void answer(InvocationOnMock invocation) {
