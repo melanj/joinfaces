@@ -186,6 +186,8 @@ public class JakartaFaces3Properties implements ServletContextInitParameterPrope
 	 * Semicolon-separated list of view IDs that must save state using the JSF
 	 * 1.2-style state saving.
 	 */
+	@SuppressWarnings("removal")
+	@Deprecated(forRemoval = true)
 	@ServletContextInitParameter(value = StateManager.FULL_STATE_SAVING_VIEW_IDS_PARAM_NAME, listSeparator = ";")
 	private List<String> fullStateSavingViewIds;
 
@@ -220,6 +222,8 @@ public class JakartaFaces3Properties implements ServletContextInitParameterPrope
 	/**
 	 * If true, use the JSF2 partial state saving for views.
 	 */
+	@SuppressWarnings("removal")
+	@Deprecated(forRemoval = true, since = "JSF 4.1")
 	@ServletContextInitParameter(StateManager.PARTIAL_STATE_SAVING_PARAM_NAME)
 	private Boolean partialStateSaving;
 
