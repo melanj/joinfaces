@@ -8,7 +8,7 @@ dependencies {
 
     api project(':joinfaces-starters:cdi-spring-boot-starter')
 
-    runtimeOnly('jakarta.enterprise:jakarta.enterprise.cdi-api') {
+    runtimeOnly('jakarta.enterprise:jakarta.enterprise.cdi-el-api') {
         exclude group: 'jakarta.el', module: 'jakarta.el-api'
         exclude group: 'jakarta.ejb', module: 'jakarta.ejb-api'
     }
