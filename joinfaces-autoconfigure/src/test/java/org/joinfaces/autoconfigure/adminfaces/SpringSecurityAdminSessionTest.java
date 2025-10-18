@@ -27,6 +27,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
+@Deprecated(since = "5.5")
 @ExtendWith(SpringExtension.class)
 class SpringSecurityAdminSessionTest {
 

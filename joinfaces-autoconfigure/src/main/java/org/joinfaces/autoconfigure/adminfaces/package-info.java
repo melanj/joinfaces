@@ -19,4 +19,5 @@
  *
  * @see org.joinfaces.autoconfigure.adminfaces.AdminfacesAutoConfiguration
  */
+@Deprecated(since = "5.5")
 package org.joinfaces.autoconfigure.adminfaces;

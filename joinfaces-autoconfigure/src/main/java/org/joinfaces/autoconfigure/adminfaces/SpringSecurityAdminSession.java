@@ -22,6 +22,7 @@ import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+@Deprecated(since = "5.5")
 public class SpringSecurityAdminSession extends AdminSession {
 
 	@Override

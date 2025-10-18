@@ -28,6 +28,7 @@ import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Deprecated(since = "5.5")
 public class AdminfacesAutoConfigurationTest {
 
 	private WebApplicationContextRunner webApplicationContextRunner;

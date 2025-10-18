@@ -18,6 +18,7 @@ package org.joinfaces.starter.adminfaces;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@Deprecated(since = "5.5")
 @SpringBootApplication
 public class AdminfacesTestApplication {
 }

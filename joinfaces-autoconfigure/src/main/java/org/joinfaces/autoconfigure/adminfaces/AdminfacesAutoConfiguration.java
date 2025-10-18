@@ -51,6 +51,7 @@ import org.springframework.http.HttpStatus;
  * Spring Boot Auto Configuration of AdminFaces.
  *
  * @author Marcelo Fernandes
+ * @deprecated see <a href="https://github.com/joinfaces/joinfaces/issues/2849">#2849</a>
  */
 @Slf4j
 @Configuration(proxyBeanMethods = false)
@@ -63,6 +64,7 @@ import org.springframework.http.HttpStatus;
 @ConditionalOnClass(AdminSession.class)
 @AutoConfigureBefore(PrimefacesAutoConfiguration.class)
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
+@Deprecated(since = "5.5")
 public class AdminfacesAutoConfiguration {
 
 	@Bean

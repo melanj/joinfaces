@@ -34,9 +34,11 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
  * </ul>
  *
  * @author Marcelo Fernandes
+ * @deprecated see <a href="https://github.com/joinfaces/joinfaces/issues/2849">#2849</a>
  */
 @Data
 @ConfigurationProperties(prefix = "joinfaces.adminfaces")
+@Deprecated(since = "5.5")
 public class AdminfacesProperties implements Serializable {
 
 	@Serial

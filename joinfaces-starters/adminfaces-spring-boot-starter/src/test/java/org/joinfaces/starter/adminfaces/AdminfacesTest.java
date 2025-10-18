@@ -27,6 +27,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Deprecated(since = "5.5")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, properties = "joinfaces.adminfaces.skin=skin-joinfaces")
 public class AdminfacesTest {
 

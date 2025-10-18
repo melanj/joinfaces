@@ -31,9 +31,11 @@ import org.springframework.util.Assert;
  *
  * @author Lars Grefer
  * @since 5.2.2
+ * @deprecated see <a href="https://github.com/joinfaces/joinfaces/issues/2849">#2849</a>
  */
 @Slf4j
 @UtilityClass
+@Deprecated(since = "5.5")
 public class AdminfacesConfigSupport {
 
 	public static void mapProperties(AdminfacesProperties adminfacesProperties) {
