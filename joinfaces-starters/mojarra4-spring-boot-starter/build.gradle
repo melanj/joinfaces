@@ -28,3 +28,22 @@ configurations {
         }
     }
 }
+
+publishing {
+    publications {
+        relocation(MavenPublication) {
+            pom {
+                // Old artifact coordinates
+                artifactId = "mojarra3-spring-boot-starter"
+
+                distributionManagement {
+                    relocation {
+                        // New artifact coordinates
+                        artifactId = "mojarra4-spring-boot-starter"
+                        message = "Update to Mojarra 4.x baseline"
+                    }
+                }
+            }
+        }
+    }
+}

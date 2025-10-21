@@ -13,3 +13,22 @@ dependencies {
     api 'org.springframework.boot:spring-boot-starter-tomcat'
     api project(':joinfaces-starters:mojarra-spring-boot-starter')
 }
+
+publishing {
+    publications {
+        relocation(MavenPublication) {
+            pom {
+                // Old artifact coordinates
+                artifactId = "jsf-spring-boot-starter"
+
+                distributionManagement {
+                    relocation {
+                        // New artifact coordinates
+                        artifactId = "faces-spring-boot-starter"
+                        message = "Rename jsf to faces"
+                    }
+                }
+            }
+        }
+    }
+}

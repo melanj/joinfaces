@@ -35,3 +35,22 @@ configurations {
         }
     }
 }
+
+publishing {
+    publications {
+        relocation(MavenPublication) {
+            pom {
+                // Old artifact coordinates
+                artifactId = "myfaces3-spring-boot-starter"
+
+                distributionManagement {
+                    relocation {
+                        // New artifact coordinates
+                        artifactId = "myfaces4-spring-boot-starter"
+                        message = "Update to MyFaces 4.x baseline"
+                    }
+                }
+            }
+        }
+    }
+}

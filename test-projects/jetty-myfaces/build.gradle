@@ -4,14 +4,14 @@ dependencies {
     implementation project(':joinfaces-starters:faces-spring-boot-starter')
 
     implementation 'org.springframework.boot:spring-boot-starter-jetty'
-    implementation project(':joinfaces-starters:myfaces3-spring-boot-starter')
+    implementation project(':joinfaces-starters:myfaces4-spring-boot-starter')
 
     modules {
         module("org.springframework.boot:spring-boot-starter-tomcat") {
             replacedBy("org.springframework.boot:spring-boot-starter-jetty", "Use Jetty instead of Tomcat")
         }
         module("org.joinfaces:mojarra4-spring-boot-starter") {
-            replacedBy("org.joinfaces:myfaces3-spring-boot-starter", "Use MyFaces instead of Mojarra")
+            replacedBy("org.joinfaces:myfaces4-spring-boot-starter", "Use MyFaces instead of Mojarra")
         }
     }
 }
