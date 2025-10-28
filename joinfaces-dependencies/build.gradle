@@ -64,8 +64,6 @@ publishing {
                 name = 'JoinFaces Dependencies'
                 description = 'Dependency management for JoinFaces Dependencies'
             }
-
-            signing.sign it
         }
     }
 }

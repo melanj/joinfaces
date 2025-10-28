@@ -22,8 +22,6 @@ publishing {
                 name = 'JoinFaces Platform'
                 description = 'JoinFaces Platform'
             }
-
-            signing.sign it
         }
     }
 }

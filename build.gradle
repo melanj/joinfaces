@@ -1,4 +1,5 @@
 plugins {
+    id 'base'
     id "io.freefair.git-version"
     id "io.freefair.aggregate-jacoco-report"
     id "io.freefair.lombok" apply false
@@ -85,16 +86,7 @@ allprojects {
 
     plugins.withId("maven-publish") {
 
-        project.apply plugin: "signing"
         project.apply plugin: "io.freefair.maven-central.validate-poms"
-
-        signing {
-            required = { !version.endsWith('SNAPSHOT') && gradle.taskGraph.hasTask("publish") }
-
-            def signingKey = findProperty("signingKey")
-            def signingPassword = findProperty("signingPassword")
-            useInMemoryPgpKeys(signingKey, signingPassword)
-        }
 
         publishing {
             publications.withType(MavenPublication) {
@@ -170,7 +162,8 @@ jreleaser {
         license = 'Apache-2.0'
     }
     signing {
-        active = 'NEVER'
+        active = 'ALWAYS'
+        armored = true
     }
     deploy {
         maven {

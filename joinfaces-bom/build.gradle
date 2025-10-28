@@ -24,8 +24,6 @@ publishing {
                 name = 'JoinFaces BOM'
                 description = 'Dependency management for JoinFaces Artifacts'
             }
-
-            signing.sign it
         }
     }
 }
