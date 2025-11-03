@@ -6,7 +6,7 @@ There are many JoinFaces Starters available: six basic starters, meta starter, s
 
 While most of the starters can be combined, some starters are mutually exclusive:
 
-- `mojarra3-spring-boot-starter`, `mojarra4-spring-boot-starter`, `myfaces3-spring-boot-starter` and `myfaces4-spring-boot-starter`
+- `mojarra4-spring-boot-starter` and `myfaces4-spring-boot-starter`
 - `weld-spring-boot-starter` and `openwebbeans-spring-boot-starter`
 
 You can use the table below to discover the starters that fit your needs.
@@ -16,23 +16,14 @@ You can use the table below to discover the starters that fit your needs.
 |===========
 |Starter |Description
 
-|jsf-spring-boot-starter
-|Meta starter that pulls `spring-boot-starter-tomcat` and `mojarra3-spring-boot-starter`.
-
 |faces-spring-boot-starter
 |Meta starter that pulls `spring-boot-starter-tomcat` and `mojarra4-spring-boot-starter`.
 
-|mojarra3-spring-boot-starter
-|Basic starter for https://github.com/eclipse-ee4j/mojarra[Mojarra] JSF implementation.
-
 |mojarra4-spring-boot-starter
-|Basic starter for https://github.com/eclipse-ee4j/mojarra[Mojarra] JSF implementation.
-
-|myfaces3-spring-boot-starter
-|Basic starter for https://myfaces.apache.org/#/core30[MyFaces] JSF implementation.
+|Basic starter for https://github.com/eclipse-ee4j/mojarra[Mojarra] Jakarta Faces implementation.
 
 |myfaces4-spring-boot-starter
-|Basic starter for https://myfaces.apache.org/#/core40[MyFaces] JSF implementation.
+|Basic starter for https://myfaces.apache.org/#/core41[MyFaces] Jakarta Faces implementation.
 
 |weld-spring-boot-starter
 |Basic starter for https://weld.cdi-spec.org/[Weld] CDI Reference Implementation.
@@ -58,7 +49,7 @@ You can use the table below to discover the starters that fit your needs.
 |===========
 
 ==== Not using Tomcat or Mojarra
-`faces-spring-boot-starter` and `jsf-spring-boot-starter` pull Tomcat and Mojarra as defaults. If you want to change this, you have to exclude one starter and pull another one instead.
+`faces-spring-boot-starter` pulls Tomcat and Mojarra as defaults. If you want to change this, you have to exclude one starter and pull another one instead.
 
 The principle behind this is the same as described here:
 
